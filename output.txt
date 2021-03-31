@@ -1,0 +1,27 @@
+###################################################################################################
+##                                                                                               ##
+##                     ** Output of customer_data_retrieval.py   **                              ##
+##     **      Run Program using command ::  python Customer_data_retrieval.py                   ##
+##                                                                                               ##
+###################################################################################################
+
+[pallavi.kakade@ammeon.com@HGXHTN2 intercom_technical_assessment]$ python Customer_data_retrieval.py 
+The full list of customers with their names and user_ids(sorted in ascending order) of matching customers (within 100km from Dublin office) are :: - 
+{4: 'Ian Kehoe',
+ 5: 'Nora Dempsey',
+ 6: 'Theresa Enright',
+ 8: 'Eoin Ahearn',
+ 11: 'Richard Finnegan',
+ 12: 'Christina McArdle',
+ 13: 'Olive Ahearn',
+ 15: 'Michael Ahearn',
+ 17: 'Patricia Cahill',
+ 23: 'Eoin Gallagher',
+ 24: 'Rose Enright',
+ 26: 'Stephen McArdle',
+ 29: 'Oliver Ahearn',
+ 30: 'Nick Enright',
+ 31: 'Alan Behan',
+ 39: 'Lisa Ahearn'}
+[pallavi.kakade@ammeon.com@HGXHTN2 intercom_technical_assessment]$ 
+
