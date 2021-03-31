@@ -1,11 +1,17 @@
 ###################################################################################################
 ##                                                                                               ##
 ##                     ** Output of customer_data_retrieval.py   **                              ##
-##     **      Run Program using command ::  python Customer_data_retrieval.py                   ##
-##                                                                                               ##
+##     **      Run Program using command ::  python Customer_data_retrieval.py   **              ##
+##      **  Make sure the customer.txt file is saved in same project path **                     ##
 ###################################################################################################
 
-[pallavi.kakade@ammeon.com@HGXHTN2 intercom_technical_assessment]$ python Customer_data_retrieval.py 
+[pallavi.kakade intercom_technical_assessment]$ ll
+total 12
+-rw-r--r-- 1 pallavi.kakade 4465 Mar 31 23:39 Customer_data_retrieval.py
+-rw-r--r-- 1 pallavi.kakade 2904 Mar 31 23:39 customers.txt
+drwxr-xr-x 5 pallavi.kakade   56 Mar 31 19:31 venv
+[pallavi.kakade intercom_technical_assessment]$ 
+[pallavi.kakade intercom_technical_assessment]$ python Customer_data_retrieval.py 
 The full list of customers with their names and user_ids(sorted in ascending order) of matching customers (within 100km from Dublin office) are :: - 
 {4: 'Ian Kehoe',
  5: 'Nora Dempsey',
@@ -23,5 +29,6 @@ The full list of customers with their names and user_ids(sorted in ascending ord
  30: 'Nick Enright',
  31: 'Alan Behan',
  39: 'Lisa Ahearn'}
-[pallavi.kakade@ammeon.com@HGXHTN2 intercom_technical_assessment]$ 
+[pallavi.kakade intercom_technical_assessment]$ 
+
 
