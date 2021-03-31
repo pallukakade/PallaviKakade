@@ -31,7 +31,6 @@ import ast
 from math import cos, sqrt, sin, radians, asin
 from pprint import pprint
 
-
 class Customer_data_retrieval:
     def customer_details(self):
         """
@@ -60,46 +59,41 @@ class Customer_data_retrieval:
         # dublin office latitude and longitude co-ordinates.
         dub_off_latitude, dub_off_longitude = radians(53.339428), radians(-6.257664)
 
-        # empty customer list to store the user_id and name
-        # of customers whose distance is <=100
-        customer_dict = {}
-
         # Please provide the path  of the customer data.txt file stored on your local machine
         # input_file = open("/path/to/customers.txt", "r")
-        input_file = open("/home/pallavi.kakade@ammeon.com/python_practice/customers.txt", "r")
-        self.customer_dict = {}
+        input_file = open("customers.txt", "r")
+        customer_dict = {}
 
         # retrieve  line of the customer.txt file
         with input_file as file1:
             for line in file1:
                 line1 = ast.literal_eval(line)
-                # Retrieving the latitude and longitude from the file
                 latitide1 = radians(float(line1.get('latitude')))
                 longitude1 = radians(float(line1.get('longitude')))
 
+                dlon = longitude1 - dub_off_longitude
+                dlat = latitide1 - dub_off_latitude
                 # Radius of earth in kilometers.
-                radius_in_kms = 6371
+                r = 6371
+                d1 = sin(dlat / 2)**2 + cos(dub_off_latitude) * cos(latitide1) * sin(dlon / 2)**2
+                d2 = 2 * asin(sqrt(d1))
+                distance = round(d2 * r, 2)
 
-                # Find distance of customer from the
-                # Dublin office using Haversine Formulae.
-                longitude_diff = longitude1 - dub_off_longitude
-                latitide_diff = latitide1 - dub_off_latitude
-
-                computation1 = sin(latitide_diff / 2) ** 2 + cos(dub_off_latitude) * \
-                               cos(latitide1) * sin(longitude_diff / 2) ** 2
-                computation2 = 2 * asin(sqrt(computation1))
-                distance_in_kms = round(computation2 * radius_in_kms, 2)
-
-                if distance_in_kms <= 100:
+                if distance <= 100:
                     customer_dict[line1['user_id']] = str(line1['name'])
 
-        print('The full list of customers with their names and '
-              'user_ids(sorted in ascending order) of matching customers '
-              '(within 100km from Dublin office) are :: - ')
         pprint(dict(sorted(customer_dict.items())))
 
-# Calling the class customer
-customer_list = Customer_data_retrieval()
-customer_list.customer_details()
+def main():
+    print('The full list of customers with their names and '
+          'user_ids(sorted in ascending order) of matching customers '
+          '(within 100km from Dublin office) are :: - ')
+    customers = Customer_data_retrieval()
+    customers.customer_details()
+
+
+if __name__ == "__main__":
+    main()
+
 
 
