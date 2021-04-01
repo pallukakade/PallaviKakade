@@ -45,8 +45,8 @@ class Customer_data_retrieval:
               @result: The name and user_id of the customer is retrieved.
               @step: Arrange the list of customers in ascending order of user_ids.
               @result: The list of customers is arranged in ascending order of user_ids.
-           @tms_pre-condition: Save the customer.txt file on local machine and
-                                   update the path of the file in code(input_file)
+           @tms_pre-condition: Save the customer.txt and Customer_data_retrieval.py file
+                                at same directory on local machine.
         """
         # empty customer dictionary is created
         customer_dict = {}
@@ -83,14 +83,14 @@ if __name__ == "__main__":
            @result: The coordinates of Dublin office are converted to radians.
            @step: Open the customer.txt file in read mode.
            @result: The customer.txt file is opened in read mode
-       @tms_pre-condition: Save the customer.txt file on local machine and
-                            update the path of the file in code(input_file)
+       @tms_pre-condition: Save the customer.txt and Customer_data_retrieval.py file
+                            at same directory on local machine
     """
     # dublin office latitude and longitude co-ordinates.
     dub_off_latitude, dub_off_longitude = radians(53.339428), radians(-6.257664)
 
-    # Please provide the path  of the customer data.txt file stored on your local machine
-    # input_file = open("/path/to/customers.txt", "r")
+    # Save the customer.txt and Customer_data_retrieval.py file 
+    # at same directory on local machine
     input_file = open("customers.txt", "r")
 
     # Radius of earth in kilometers.
