@@ -55,7 +55,8 @@ class Customer_data_retrieval:
         with input_file as file1:
             for line in file1:
                 line1 = ast.literal_eval(line)
-
+                
+                # Haversine formula computation
                 latitide1 = radians(float(line1.get('latitude')))
                 longitude1 = radians(float(line1.get('longitude')))
 
